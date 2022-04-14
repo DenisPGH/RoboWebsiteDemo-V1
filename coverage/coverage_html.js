@@ -164,7 +164,7 @@ coverage.wire_up_filter = function () {
 
 coverage.INDEX_SORT_STORAGE = "COVERAGE_INDEX_SORT_2";
 
-// Loaded on index.html
+// Loaded on a_index.html
 coverage.index_ready = function () {
     coverage.assign_shortkeys();
     coverage.wire_up_filter();
