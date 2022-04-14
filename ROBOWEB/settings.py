@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'ROBOWEB.wsgi.application'
 POSTGRE_DATABASE_CONFIG = {
     'ENGINE': 'django.db.backends.postgresql',
     'HOST': 'oec2-63-32-248-14.eu-west-1.compute.amazonaws.com',
-    'PORT': '5432' ,  
+    'PORT': '5432' ,
     'NAME': 'd9e85ftrkeu9l3' ,
     'USER': 'nowbjwpljakqjk' ,
     'PASSWORD': 'b4f2f8865a8713e44ffa46aef21e16dde18b1d25f18ada96b67ce5cf296659aa',
