@@ -17,6 +17,7 @@ from django.urls import reverse_lazy
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+DEBUG = False
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -29,10 +30,9 @@ SECRET_KEY= os.getenv('SECRET_KEY','key')
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.getenv('DEBUG',True)
 
-DEBUG = False
 
 ALLOWED_HOSTS = [
-    "robo-website.herokuapp.com",
+    'robo-website.herokuapp.com',
 ]
 
 
