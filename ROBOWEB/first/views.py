@@ -26,7 +26,8 @@ class RedirectToLoginPage:
         return super().dispatch(request, *args, **kwargs)
 
 
-class LoginPageView(LoginView, FormRegistrationPost):
+#class LoginPageView(LoginView, FormRegistrationPost):
+class LoginPageView(LoginView):
 
     """ new class view for login"""
     template_name = 'first/first_page.html'
