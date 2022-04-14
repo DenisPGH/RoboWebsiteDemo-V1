@@ -10,7 +10,7 @@ urlpatterns = (
     path("l/",login_page,name="login_page" ),
     path("g/",galery,name="galery"),
 
-    path("",LogoutPageView.as_view(),name="logout"),
+    path("logout/",LogoutPageView.as_view(),name="logout"),
     path("profil/<int:pk>/",ProfilDetailsView.as_view(),name="profil_page"),
     path("edit/<int:pk>/", edit_profil, name="edit_profil_page"),
     path("delete/<int:pk>/",DeleteProfilView.as_view(),name="delete_profil_page"),
