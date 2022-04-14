@@ -31,7 +31,9 @@ SECRET_KEY= os.getenv('SECRET_KEY','key')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "robo-website.herokuapp.com",
+]
 
 
 
