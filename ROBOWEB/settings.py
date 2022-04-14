@@ -97,12 +97,12 @@ WSGI_APPLICATION = 'ROBOWEB.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'oec2-63-32-248-14.eu-west-1.compute.amazonaws.com',
+        'HOST': 'ec2-63-35-156-160.eu-west-1.compute.amazonaws.com',
         'PORT': '5432' ,
-        'NAME': 'd9e85ftrkeu9l3' ,
-        'USER': 'nowbjwpljakqjk' ,
-        'PASSWORD': 'b4f2f8865a8713e44ffa46aef21e16dde18b1d25f18ada96b67ce5cf296659aa',
-            }
+        'NAME': 'd16jac2q2i84q9' ,
+        'USER': 'jjmpacuhixgczb' ,
+        'PASSWORD': '937d8dc0db834cd8f6135433fec8d8b9cd4e6cdb963e95df8f3f4a895d21bbb1',
+            },
 }
 
 
