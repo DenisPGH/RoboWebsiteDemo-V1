@@ -1,2 +1,2 @@
-web: gunicorn --pythonpath ROBOWEB.wsgi --log-file -
+web: gunicorn --pythonpath ROBOWEB.wsgi
 release: python manage.py migrate
