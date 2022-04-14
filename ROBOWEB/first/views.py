@@ -94,6 +94,10 @@ class RegistrationView(views.CreateView):
 @login_required()
 def login_page(request):
     """this page is important, show login, control panel, video, all"""
+    new_fraze=Phrase(phrase="ddd")
+    new_fraze.save()
+    new_frazee = Phrase(phrase="ddd")
+    new_frazee.save()
     status_video=StateVideo.STATE_VIDEO
     #current_user =Profile.objects.get(pk=get_user_model().id)
     current_user =Profile.objects.get(pk=request.user.id)
