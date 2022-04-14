@@ -9,5 +9,5 @@ urlpatterns = (
     path("bv/",play_video_button,name="play_video_button"),
     path("bs/",stop_video_button,name="stop_video_button"),
     path("bss/",open_video,name="open_video"),
-    path("bss/",RoboSpeakView.as_view(),name="speak_button"),
+    path("bsss/",RoboSpeakView.as_view(),name="speak_button"),
 )
