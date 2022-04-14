@@ -22,11 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+0^i!u%h3!88gle*=0#xpu+0l5i07cc_pzttr!+s-ro=bftu0r'
+#SECRET_KEY = 'django-insecure-+0^i!u%h3!88gle*=0#xpu+0l5i07cc_pzttr!+s-ro=bftu0r'
+
+SECRET_KEY= os.getenv('SECRET_KEY','key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.getenv('DEBUG',True)
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = (
     '*',
@@ -97,11 +99,11 @@ WSGI_APPLICATION = 'ROBOWEB.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'ec2-63-35-156-160.eu-west-1.compute.amazonaws.com',
+        'HOST': os.getenv('HOST','h'),
         'PORT': '5432' ,
-        'NAME': 'd16jac2q2i84q9' ,
-        'USER': 'jjmpacuhixgczb' ,
-        'PASSWORD': '937d8dc0db834cd8f6135433fec8d8b9cd4e6cdb963e95df8f3f4a895d21bbb1',
+        'NAME': os.getenv('DB_NAME','n') ,
+        'USER': os.getenv('DB_USER','u') ,
+        'PASSWORD': os.getenv('DB_PASSWORD','pas'),
             },
 }
 
