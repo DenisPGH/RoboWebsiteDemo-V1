@@ -25,9 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+0^i!u%h3!88gle*=0#xpu+0l5i07cc_pzttr!+s-ro=bftu0r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'robo-website.herokuapp.com'
+]
 
 
 # Application definition
@@ -125,14 +129,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/' # STATIC_URL = '/static/'
+STATIC_URL = 'admin_static/' # STATIC_URL = '/admin_static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-# Extra places for collectstatic to find static files.
+# Extra places for collectstatic to find admin_static files.
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'admin_static'),
 )
 
 
