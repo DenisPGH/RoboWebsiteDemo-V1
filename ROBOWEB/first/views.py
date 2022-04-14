@@ -91,7 +91,7 @@ class RegistrationView(views.CreateView):
 #         'invalid_user':invalid_user
 #             }
 #     return render(request, "first_page.html", context)
-
+@login_required()
 def login_page(request):
     """this page is important, show login, control panel, video, all"""
     status_video=StateVideo.STATE_VIDEO
@@ -133,7 +133,7 @@ def login_page(request):
 
     return render(request, 'first/login_page.html', context)
 
-
+@login_required()
 def galery(request):
     """ this function shows the pictures from images tabel"""
     pictures = Images.objects.all()
