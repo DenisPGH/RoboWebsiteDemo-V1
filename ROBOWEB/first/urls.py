@@ -15,6 +15,6 @@ urlpatterns = (
     path("edit/<int:pk>/", edit_profil, name="edit_profil_page"),
     path("delete/<int:pk>/",DeleteProfilView.as_view(),name="delete_profil_page"),
     path("change/",ChangeUserPasswordView.as_view(),name="change_password_page"),
-    path("",saved_password,name="saved_password"),
+    path("pass/",saved_password,name="saved_password"),
     path('password_change_done/', RedirectView.as_view(url=reverse_lazy('first_page')), name='password_change_done'),
 )
