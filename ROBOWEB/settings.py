@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'ROBOWEB.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-POSTGRE_DATABASE_CONFIG = {
+DATABASES = {
     'ENGINE': 'django.db.backends.postgresql',
     'HOST': 'oec2-63-32-248-14.eu-west-1.compute.amazonaws.com',
     'PORT': '5432' ,
@@ -102,7 +102,7 @@ POSTGRE_DATABASE_CONFIG = {
     'USER': 'nowbjwpljakqjk' ,
     'PASSWORD': 'b4f2f8865a8713e44ffa46aef21e16dde18b1d25f18ada96b67ce5cf296659aa',
 }
-DATABASES=POSTGRE_DATABASE_CONFIG
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
