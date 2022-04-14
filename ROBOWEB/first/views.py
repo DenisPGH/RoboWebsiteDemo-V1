@@ -36,14 +36,14 @@ class LoginPageView(LoginView, FormRegistrationPost):
 class LogoutPageView(LogoutView):
     """ by pressing logout, redirect to fitst page"""
     def get_success_url(self):
-        return reverse_lazy('first_page')
+        return reverse_lazy('index')
 
 
 class RegistrationView(views.CreateView):
     """" This View start the register page form for new users"""
     form_class = CreateNewUserForm
     template_name = 'first/register_page.html'
-    success_url = reverse_lazy('first_page')
+    success_url = reverse_lazy('index')
 
 # def register_page(request):
 #     """this function start regirstration page

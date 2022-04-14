@@ -32,7 +32,7 @@ SECRET_KEY= os.getenv('SECRET_KEY','key')
 
 DEBUG = False
 ALLOWED_HOSTS = [
-    '1robo-website.herokuapp.com',
+    'robo-website.herokuapp.com',
     'localhost',
 ]
 
@@ -187,6 +187,6 @@ LOGGING = {
 }
 
 AUTH_USER_MODEL = 'first.RoboUser'
-LOGOUT_REDIRECT_URL='first_page'
+LOGOUT_REDIRECT_URL='index'
 
 # LOGIN_URL = reverse_lazy('login user')

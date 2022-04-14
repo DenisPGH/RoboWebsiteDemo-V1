@@ -16,7 +16,7 @@
     <header class="Title_my"> WEBSITE OF NANOROBO</header>
     <main>
         <section>
-            <form class="login" method='post' action="{% url 'first_page' %}">
+            <form class="login" method='post' action="{% url 'index' %}">
                 {{ form }}
                 <button class="login">LOGIN</button>
                 {% csrf_token %}

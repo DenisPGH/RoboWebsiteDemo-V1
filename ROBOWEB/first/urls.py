@@ -5,7 +5,7 @@ from ROBOWEB.first.views import LoginPageView, login_page, galery, ProfilDetails
     RegistrationView
 
 urlpatterns = (
-    path("",LoginPageView.as_view(),name="first_page" ),
+    path("", LoginPageView.as_view(), name="index"),
     path("r/",RegistrationView.as_view(),name="register_page" ),
     path("l/",login_page,name="login_page" ),
     path("g/",galery,name="galery"),
@@ -16,5 +16,5 @@ urlpatterns = (
     path("delete/<int:pk>/",DeleteProfilView.as_view(),name="delete_profil_page"),
     path("change/",ChangeUserPasswordView.as_view(),name="change_password_page"),
     path("pass/",saved_password,name="saved_password"),
-    path('password_change_done/', RedirectView.as_view(url=reverse_lazy('first_page')), name='password_change_done'),
+    path('password_change_done/', RedirectView.as_view(url=reverse_lazy('index')), name='password_change_done'),
 )

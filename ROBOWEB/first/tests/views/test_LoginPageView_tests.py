@@ -13,7 +13,7 @@ class LoginPageViewTests(TestCase):
         }
         self.UserModel.objects.create_user(**user_data)
         self.client.login()
-        response=self.client.get(reverse('first_page'))
+        response=self.client.get(reverse('index'))
         self.assertTemplateUsed(response,'first_page.html')
         # self.assertEqual(
         #     user_data['email']
