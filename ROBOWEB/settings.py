@@ -28,11 +28,9 @@ SECRET_KEY = 'django-insecure-+0^i!u%h3!88gle*=0#xpu+0l5i07cc_pzttr!+s-ro=bftu0r
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'www.robo-website.herokuapp.com',
+    'https://robo-website.herokuapp.com/',
     'localhost',
     '127.0.0.1',
-
-
 ]
 
 
