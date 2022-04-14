@@ -10,7 +10,7 @@ from django.urls import reverse_lazy
 from ROBOWEB.adm.forms import AddNewPhotoForm, FormEditUser
 from ROBOWEB.first.models import WaitingUser, RoboUser, Images,Profile
 
-
+@login_required()
 def admin_page(request):
     """ this is admin panel, reject or give acces to every register user"""
     denis = Profile.objects.get(pk=request.user.id)
@@ -83,7 +83,7 @@ def edit_new_user(request,pk):
     }
     return render(request, "adm/edit_new_user.html", contex)
 
-
+@login_required()
 def reject_new_user(request,pk):
     """this function delete new user, which was reject, in admina page table"""
     user_for_delete = WaitingUser.objects.get(pk=pk)
@@ -115,7 +115,7 @@ class CreateNewPhotoView(auth_mixin.LoginRequiredMixin,views.CreateView):
 
 
 
-
+@login_required()
 def delete_pic_galery(request,pk):
     """" this view delete picture from Images in DB"""
     pic_for_delete=Images.objects.get(id=pk)
