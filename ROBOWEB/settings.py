@@ -29,10 +29,9 @@ SECRET_KEY= os.getenv('SECRET_KEY','key')
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.getenv('DEBUG',True)
 
-ALLOWED_HOSTS = ['*']
 DEBUG = False
 
-
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -170,14 +169,14 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'filters': [],
             'class': 'logging.StreamHandler',
         }
     },
     'loggers': {
         'django.db.backends': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'handlers': ['console'],
         }
     }
