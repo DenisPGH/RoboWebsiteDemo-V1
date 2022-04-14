@@ -34,7 +34,7 @@ def admin_page(request):
         "picture":picture
 
     }
-    return render(request, 'admin_page.html', context)
+    return render(request, 'adm/admin_page.html', context)
 
 
 @login_required()
@@ -81,7 +81,7 @@ def edit_new_user(request,pk):
         # "new_user":new_user,
 
     }
-    return render(request, "edit_new_user.html", contex)
+    return render(request, "adm/edit_new_user.html", contex)
 
 
 def reject_new_user(request,pk):
@@ -106,7 +106,7 @@ def add_new_photo(request):
 class CreateNewPhotoView(auth_mixin.LoginRequiredMixin,views.CreateView):
     """ this view add new picture to the Images in DB"""
     form_class = AddNewPhotoForm
-    template_name = 'add_new_photo.html'
+    template_name = 'adm/add_new_photo.html'
     success_url = reverse_lazy('admin_page')
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -168,7 +168,7 @@ def edit_new_user(request,pk):
         # "new_user":new_user,
 
     }
-    return render(request, "edit_new_user.html", contex)
+    return render(request, "adm/edit_new_user.html", contex)
 
 @login_required()
 def give_access_new_user(request,pk):

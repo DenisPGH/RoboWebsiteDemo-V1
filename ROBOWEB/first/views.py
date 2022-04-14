@@ -29,7 +29,7 @@ class RedirectToLoginPage:
 class LoginPageView(LoginView, FormRegistrationPost):
 
     """ new class view for login"""
-    template_name = 'first_page.html'
+    template_name = 'first/first_page.html'
     def get_success_url(self):
         return reverse_lazy('login_page')
 
@@ -42,7 +42,7 @@ class LogoutPageView(LogoutView):
 class RegistrationView(views.CreateView):
     """" This View start the register page form for new users"""
     form_class = CreateNewUserForm
-    template_name = 'register_page.html'
+    template_name = 'first/register_page.html'
     success_url = reverse_lazy('first_page')
 
 # def register_page(request):
@@ -131,7 +131,7 @@ def login_page(request):
         'status_video':status_video,
     }
 
-    return render(request, 'login_page.html', context)
+    return render(request, 'first/login_page.html', context)
 
 
 def galery(request):
@@ -140,14 +140,14 @@ def galery(request):
     context={
         'pictures':pictures,
     }
-    return render(request, "galery_page.html", context)
+    return render(request, "first/galery_page.html", context)
 
 
 
 class ProfilDetailsView(views.DetailView):
     """ start personal info for random profil"""
     model = Profile
-    template_name = 'profil_page.html'
+    template_name = 'first/profil_page.html'
     context_object_name = "form"
 
     def get_context_data(self, **kwargs):
@@ -167,7 +167,7 @@ class EditProfilView(views.UpdateView):
     #model = Profile
     #fields = ('first_name','last_name',"picture",'born')
     form_class = FormEditProfil
-    template_name = 'edit_profil_page.html'
+    template_name = 'first/edit_profil_page.html'
 
     # def form_valid(self, form):
     #     pass
@@ -184,7 +184,7 @@ class EditProfilView(views.UpdateView):
 
 class ChangeUserPasswordView(auth_views.PasswordChangeView):
     """" this class change the password of logged user and return himself to first page"""
-    template_name = 'change_password_page.html'
+    template_name = 'first/change_password_page.html'
 
 @login_required()
 def saved_password(request):
@@ -249,7 +249,7 @@ def edit_profil(request, pk):
 
 
     }
-    return render(request, "edit_profil_page.html", contex)
+    return render(request, "first/edit_profil_page.html", contex)
 
 
 
