@@ -32,9 +32,13 @@ SECRET_KEY= os.getenv('SECRET_KEY','SECRET_KEY')
 
 #DEBUG = os.getenv('DEBUG','False') =='False'
 DEBUG = False
+#WHITENOISE_AUTOREFRESH = True
+
+
+
+
 ALLOWED_HOSTS = [
     'robo-website.herokuapp.com',
-    'localhost',
     '127.0.0.1',
 ]
 
@@ -59,6 +63,7 @@ INSTALLED_APPS = DJANGO_APPS+PROJECT_APPS
 
 
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -67,6 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'ROBOWEB.urls'
@@ -146,7 +152,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/' # STATIC_URL = '/adm/'
+STATIC_URL = '/static/' # STATIC_URL = '/adm/'
 
 STATIC_ROOT = BASE_DIR/ 'staticfiles'
 
@@ -168,11 +174,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGGING = {
     'version': 1,
-    'filters': {
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
-        }
-    },
+    # 'filters': {
+    #     'require_debug_true': {
+    #         '()': 'django.utils.log.RequireDebugTrue',
+    #     }
+    # },
     'handlers': {
         'console': {
             'level': os.getenv('LOGGING_LEVEL','INFO'),

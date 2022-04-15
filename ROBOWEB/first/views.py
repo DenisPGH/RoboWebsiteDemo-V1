@@ -115,7 +115,7 @@ def login_page(request):
         # YOU CAN TAKE MESSAGE FOR THE ROBO FROM HERE
     say_form =FormCreateNewPhrase()
     if request.method=="POST":
-        print(f'SAY==={request.method}')
+        #print(f'SAY==={request.method}')
         say_form = FormCreateNewPhrase(request.POST)
         if say_form.is_valid():
             new_phrase=Phrase(phrase=say_form.cleaned_data['phrase'])
