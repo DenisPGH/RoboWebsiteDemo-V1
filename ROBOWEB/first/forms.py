@@ -19,7 +19,7 @@ from ROBOWEB.first.models import RoboUser, WaitingUser, Profile, Images
 #             validator_min_lenght,
 #         )
 #     )
-from ROBOWEB.first.validatros import MaxFileSizeInMbValidator
+from ROBOWEB.first.validatros import MaxFileSizeInMbValidator, max_file_size
 
 
 class FormPlaceHolderMixin:
@@ -151,12 +151,10 @@ class CreateNewUserForm(FormPlaceHolderMixin,auth_forms.UserCreationForm):
     first_name = forms.CharField(max_length=25, )
     last_name = forms.CharField(max_length=Profile.MAX_LENGHT_LAST_NAME)
     email = forms.EmailField()
-    born = forms.DateField(
-
-    )
+    born = forms.DateField()
     picture = forms.ImageField(
         validators=(
-            MaxFileSizeInMbValidator,
+            max_file_size,
         ),
     )
     # type_user = forms.CharField(
@@ -192,24 +190,9 @@ class CreateNewUserForm(FormPlaceHolderMixin,auth_forms.UserCreationForm):
     class Meta:
         model = get_user_model()
         fields = ('password1', 'password2', 'first_name', 'last_name', 'picture', 'born',"email")
-        #widgets = {
-        # widgets = {
-        #     'first_name': forms.TextInput(
-        #         attrs={
-        #             'placeholder': 'Enter first name',
-        #         }
-        #     ),
-        #     'last_name': forms.TextInput(
-        #         attrs={
-        #             'placeholder': 'Enter last name',
-        #         }
-        #     ),
-        #     'picture': forms.TextInput(
-        #         attrs={
-        #             'placeholder': 'Enter URL',
-        #         }
-        #     ),
-        # }
+
+
+
 
 
 

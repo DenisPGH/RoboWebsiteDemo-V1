@@ -23,7 +23,8 @@ def validator_current_user_password():
 
 @deconstructible
 class MaxFileSizeInMbValidator():
-    def __init__(self):
+    """dont work this"""
+    def __init__(self,*args,**kwargs):
         self.max_size = 0.000000000001
 
     def __call__(self, value):
@@ -31,3 +32,10 @@ class MaxFileSizeInMbValidator():
 
         if filesize > self.max_size * 1024 * 1024:
             raise ValidationError("Max file size is 1MB")
+
+
+def max_file_size(value): # add this to some file where you can import it from
+    """this function is for max size of uplaod images"""
+    limit = 1 * 1024 * 1024
+    if value.size > limit:
+        raise ValidationError('File too large. Size should not exceed 1 MB.')
