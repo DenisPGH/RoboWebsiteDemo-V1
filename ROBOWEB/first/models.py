@@ -9,7 +9,7 @@ from django.db import models
 
 # Create your models here.
 from ROBOWEB.first.managers import AppUsersManager
-from ROBOWEB.first.validatros import validator_min_lenght
+from ROBOWEB.first.validatros import validator_min_lenght, MaxFileSizeInMbValidator
 
 
 class Time_C(models.Model):
@@ -70,7 +70,12 @@ class WaitingUser(Time_C):
 
 class Images(models.Model):
     pic=models.CharField( max_length=200,)
-    link=models.CharField( max_length=200,)
+    link = models.ImageField(
+        upload_to='image_profils',
+        blank=True,
+        null=True
+
+    )
 
 
 
@@ -115,8 +120,7 @@ class Profile(models.Model):
     picture = models.ImageField(
         upload_to='image_profils',
         blank=True,
-        null=True
-
+        null=True,
     )
     type_user = models.CharField(
         max_length=max([len(a) for a, _ in type_users]),

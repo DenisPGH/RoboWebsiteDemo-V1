@@ -1,6 +1,7 @@
 from django.core.exceptions import ValidationError
 # from ROBO.first.models import User
 #from ROBO.first.helper import logged_user
+from django.utils.deconstruct import deconstructible
 
 
 def validator_min_lenght(text):
@@ -17,3 +18,16 @@ def vaidator_current_username(name):
 
 def validator_current_user_password():
     pass
+
+
+
+@deconstructible
+class MaxFileSizeInMbValidator():
+    def __init__(self):
+        self.max_size = 0.000000000001
+
+    def __call__(self, value):
+        filesize = value.file.size
+
+        if filesize > self.max_size * 1024 * 1024:
+            raise ValidationError("Max file size is 1MB")

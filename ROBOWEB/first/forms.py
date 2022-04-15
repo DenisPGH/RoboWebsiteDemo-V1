@@ -19,6 +19,8 @@ from ROBOWEB.first.models import RoboUser, WaitingUser, Profile, Images
 #             validator_min_lenght,
 #         )
 #     )
+from ROBOWEB.first.validatros import MaxFileSizeInMbValidator
+
 
 class FormPlaceHolderMixin:
     """this function has no init field and is for children, place holder and class:form control"""
@@ -152,7 +154,11 @@ class CreateNewUserForm(FormPlaceHolderMixin,auth_forms.UserCreationForm):
     born = forms.DateField(
 
     )
-    picture = forms.ImageField()
+    picture = forms.ImageField(
+        validators=(
+            MaxFileSizeInMbValidator,
+        ),
+    )
     # type_user = forms.CharField(
     #     max_length=max([len(a) for a, _ in Profile.type_users]),
     #     choices=Profile.type_users,
@@ -163,7 +169,6 @@ class CreateNewUserForm(FormPlaceHolderMixin,auth_forms.UserCreationForm):
 
     def save(self, commit=True):
         user = super().save(commit=commit)
-
         profile = Profile(
             first_name=self.cleaned_data['first_name'],
             last_name=self.cleaned_data['last_name'],
