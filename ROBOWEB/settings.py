@@ -25,15 +25,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'django-insecure-+0^i!u%h3!88gle*=0#xpu+0l5i07cc_pzttr!+s-ro=bftu0r'
 
-SECRET_KEY= os.getenv('SECRET_KEY','key')
+SECRET_KEY= os.getenv('SECRET_KEY','SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.getenv('DEBUG',True)
 
+#DEBUG = os.getenv('DEBUG','False') =='False'
 DEBUG = False
 ALLOWED_HOSTS = [
     'robo-website.herokuapp.com',
     'localhost',
+    '127.0.0.1',
 ]
 
 
@@ -101,11 +103,11 @@ WSGI_APPLICATION = 'ROBOWEB.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': os.getenv('HOST','h'),
+        'HOST': os.getenv('HOST','127.0.0.1'),
         'PORT': '5432' ,
-        'NAME': os.getenv('DB_NAME','n') ,
-        'USER': os.getenv('DB_USER','u') ,
-        'PASSWORD': os.getenv('DB_PASSWORD','pas'),
+        'NAME': os.getenv('DB_NAME','roboweb_db') ,
+        'USER': os.getenv('DB_USER','denis_postgre') ,
+        'PASSWORD': os.getenv('DB_PASSWORD','D_12-K9'),
             },
 }
 
@@ -173,14 +175,14 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level': 'INFO',
+            'level': os.getenv('LOGGING_LEVEL','INFO'),
             'filters': [],
             'class': 'logging.StreamHandler',
         }
     },
     'loggers': {
         'django.db.backends': {
-            'level': 'INFO',
+            'level': os.getenv('LOGGING_LEVEL','INFO'),
             'handlers': ['console'],
         }
     }

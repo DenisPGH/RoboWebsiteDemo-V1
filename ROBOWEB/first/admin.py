@@ -10,7 +10,7 @@ class TaskUser(admin.ModelAdmin):
 
 @admin.register(Profile)
 class TaskProfile(admin.ModelAdmin):
-    list_display = ('first_name','last_name','born','picture','type_user','user_id')
+    list_display = ('first_name','last_name','born','picture','type_user','user_id','access')
 
 
 @admin.register(WaitingUser)
