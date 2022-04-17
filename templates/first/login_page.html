@@ -38,7 +38,7 @@
             <li>Contact Me</li>
             <li>About Me</li>
             <li>
-                <a href={% url 'galery' %} >Galery</a>
+                <a href={% url 'galery' %} >Gallery</a>
             </li>
 
         </ul>
@@ -48,7 +48,7 @@
     <header>
         <div class="user">
             {% if current_user.picture %}
-            <img height="200" width="170" src="{{ current_user.picture.url}}" alt="pic">
+            <img height="200" width="170" src="{{current_user.picture.url}}" alt="Pic of user">
             {% endif %}
         </div>
 
@@ -102,7 +102,13 @@
                 </form>
             {% if status_video %}
             <article class="monitor">
-                     <h2 class="text-mon">HERE VIDEO PLAY</h2>
+{#                     <h2 class="text-mon">HERE VIDEO PLAY</h2>#}
+                    <div class="video-test">
+                        <video height="270" width="300"  autoplay muted>
+{#                            <source src="{% static "media/robo.mp4" %}" type="video/mp4">#}
+
+                            </video>
+                    </div>
 
             </article>
                 {% else %}
@@ -126,19 +132,9 @@
         </div>
 {#    {% endif %}#}
 
-{#    <footer>&copy; 2022 All rights reserved Denislav Petrov </footer>#}
 
-{#<a href="{% url 'open_video' %}"#}
-{#   onclick="window.open(this.href,'targetWindow',#}
-{#                                   `toolbar=no,#}
-{#                                    location=no,#}
-{#                                    status=no,#}
-{#                                    menubar=no,#}
-{#                                    scrollbars=yes,#}
-{#                                    resizable=yes,#}
-{#                                    width=300px,#}
-{#                                    height=300px`);#}
-{#    return false;">Deni</a>#}
+
+
 </body>
 </html>
 {% endblock %}

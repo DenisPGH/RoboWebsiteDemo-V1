@@ -109,11 +109,11 @@ WSGI_APPLICATION = 'ROBOWEB.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': os.getenv('HOST','127.0.0.1'),
+        'HOST': os.getenv('HOST','127'),
         'PORT': '5432' ,
-        'NAME': os.getenv('DB_NAME','roboweb_db') ,
-        'USER': os.getenv('DB_USER','denis_postgre') ,
-        'PASSWORD': os.getenv('DB_PASSWORD','D_12-K9'),
+        'NAME': os.getenv('DB_NAME','roboweb') ,
+        'USER': os.getenv('DB_USER','denis') ,
+        'PASSWORD': os.getenv('DB_PASSWORD','D'),
             },
 }
 
