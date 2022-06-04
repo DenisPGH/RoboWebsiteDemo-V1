@@ -28,7 +28,7 @@
         <form class="field" enctype="multipart/form-data" method='post' action="{% url 'register_page' %}">
             {{ form }}
 
-         <button class="regi"> Registration</button>
+         <button type='submit' class="regi"> Registration</button>
             {% csrf_token %}
         </form>
         <form  class="back" action="{% url 'index' %}">
