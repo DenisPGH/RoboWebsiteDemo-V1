@@ -217,6 +217,10 @@ class DeleteProfilView(views.DeleteView):
 
 
 
+
+
+
+
 def edit_profil(request, pk):
     """
     get=show form(other usr), post save data(to same url)
@@ -256,6 +260,7 @@ def edit_profil(request, pk):
 
     }
     return render(request, "first/edit_profil_page.html", contex)
+
 
 
 

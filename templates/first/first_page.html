@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NANOROBO</title>
     <link rel="stylesheet" href="{% static 'first/first_page.css' %}">
+
 {#    <link rel="stylesheet" href="{% adm 'first_page.css' %}">#}
 </head>
 <body>
@@ -22,7 +23,7 @@
                 {% csrf_token %}
             </form>
 
-            <form method="post" action="{% url 'register_page' %}">
+            <form method="get" action="{% url 'register_page' %}">
                 <button class="button">Register now </button>
                 {% csrf_token %}
             </form>
